@@ -22,6 +22,8 @@ const nextConfig = {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
+  // Enable static export output. This replaces the old `next export` command.
+  output: 'export',
 };
 
 export default withMDX(nextConfig);
