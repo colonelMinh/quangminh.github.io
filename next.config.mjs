@@ -10,6 +10,8 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {
+    // Disable Next.js image optimization for static export builds
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
