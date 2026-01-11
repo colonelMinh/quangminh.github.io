@@ -3,14 +3,16 @@ import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   // Default personal info — update these values to personalize the site
-  firstName: "Quang",
-  lastName: "Minh",
-  name: `Quang Minh`,
-  role: "Frontend Developer",
+  firstName: "Tran",
+  lastName: "Quang Minh",
+  name: `Tran Quang Minh`,
+  role: "Student",
   avatar: "/images/avatar.jpg",
   email: "Minh.TQ2515855@sis.hust.edu.vn",
   // IANA timezone identifier used for the header time display
   location: "Asia/Ho_Chi_Minh",
+  // Human-readable location for display purposes
+  displayLocation: "Hanoi, Vietnam",
   languages: ["Vietnamese", "English"],
 };
 
@@ -27,31 +29,37 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/colonelMinh",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/quang-minh-t-22b73a262/",
     essential: true,
+  },
+  {
+    name: "Facebook",
+    icon: "facebook",
+    link: "https://www.facebook.com/minhtrq007",
+    essential: false,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
+    link: "https://www.instagram.com/dai.ta_minh/",
     essential: false,
   },
   {
     name: "Threads",
     icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.threads.com/@dai.ta_minh",
     essential: true,
   },
   {
     name: "Email",
     icon: "email",
-    link: `mailto:${person.email}`,
+    link: "mailto:Minh.TQ2515855@sis.hust.edu.vn",
     essential: true,
   },
 ];
@@ -78,8 +86,8 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Hi, I'm {person.firstName}, a {person.role} based in {person.location}. I build projects that connect design and code.
+    </>
   ),
 };
 
@@ -104,9 +112,8 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        {person.name} is a {person.role} passionate about building web applications and exploring design.
+        He focuses on practical projects that bridge design and code.
       </>
     ),
   },

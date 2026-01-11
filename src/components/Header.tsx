@@ -27,7 +27,19 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
         second: "2-digit",
         hour12: false,
       };
-      const timeString = new Intl.DateTimeFormat(locale, options).format(now);
+      let timeString: string;
+      try {
+        timeString = new Intl.DateTimeFormat(locale, options).format(now);
+      } catch (err) {
+        // If the provided timeZone is invalid or unsupported, fallback to locale-based time
+        timeString = now.toLocaleTimeString(locale, {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        });
+      }
+
       setCurrentTime(timeString);
     };
 
@@ -73,7 +85,7 @@ export const Header = () => {
         }}
       >
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
+          {display.location && <Row s={{ hide: true }}>{person.displayLocation ?? person.location}</Row>}
         </Row>
         <Row fillWidth horizontal="center">
           <Row
