@@ -2,14 +2,16 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  // Default personal info — update these values to personalize the site
+  firstName: "Quang",
+  lastName: "Minh",
+  name: `Quang Minh`,
+  role: "Frontend Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "Minh.TQ2515855@sis.hust.edu.vn",
+  // IANA timezone identifier used for the header time display
+  location: "Asia/Ho_Chi_Minh",
+  languages: ["Vietnamese", "English"],
 };
 
 const newsletter: Newsletter = {
